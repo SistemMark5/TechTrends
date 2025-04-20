@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTrends • Пост</title>
+</head>
+<body>
+    <header class="profile-head">
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            }
+       </style>
+        <nav>
+            <a class="nav-item" href="#">Главная</a>
+            <a class="nav-item" href="#">Главная</a>
+            <p class="name">TechTrends</p>
+            <a class="nav-item" href="#">Главная</a>
+            <a class="nav-item" href="#">Главная</a>
+        </nav>
+    </header>
+    <main>
+        {% block main %}
+        <article class="conteiner-main">
+            <div class="post-image">
+                <img src="img/amanz-VP_FOpy5G68-unsplash.jpg" alt="Фотография поста">
+            </div>
+            <div>
+                <p class="post-title">
+                    Новый iPhone 16
+                </p>
+                <p class="post-author">
+                    Автор: Ivan Alekhin
+                </p>
+                <p class="post-source">
+                    Источник: <a href="#">appleinsider.ru </a>
+                </p>
+                <p class="post-source">
+                    Источник изображения: <a href="#">appleinsider.ru </a>
+                </p>
+                <p class="date-post">
+                    Дата публикации: 30 ноября 2024
+                </p>
+            </div>
+        </article>
+        <p class="text-post">
+            Как и предсказывали утечки, дизайн iPhone 16 cпереди остался прежним. А вот сзади нас ждало новое оформление основной камеры. Обеим модулям вернули вертикальное расположение, благодаря чему смартфон получил возможность снимать Spatial Video для Apple Vision Pro.
+            <br>
+            <br>Изначально предполагалось, что Apple оснастит свой IPhone 16 подэкранным Face ID.  Инженеры компании и правда хотели разместить датчики распознания лиц под матрицей, чтобы дисплей был полностью симметричным без выемок, козырьков и капель. Но в этом году ничего такого не случилось.
+        </p>
+        {% endblock main %}
+        
+    </main>
+ 
+</body>
+</html>
