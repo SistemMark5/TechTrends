@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/file_name.js" defer></script>
+    <title>TechTrends • Создать новый пост</title>
+</head>
+<body class="bod-for-create">
+    
+    <header class="profile-head">
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            }
+       </style>
+        <nav>
+            <a class="nav-item profile" href="#">Главная</a>
+            <a class="nav-item profile" href="#">Главная</a>
+            <p class="name">TechTrends</p>
+            <a class="nav-item profile" href="#">Главная</a>
+            <a class="nav-item profile" href="#">Главная</a>
+        </nav>
+    </header>
+
+    <main>
+        <center>
+            <div class="image-container">
+                <span id="file-status">Изображение не выбрано</span>
+                <label for="real-file-input" class="custom-button">Выберите изображение</label>
+                <input type="file" id="real-file-input" accept="image/*" class="hidden-input">
+            </div>
+        </center>
+        <article class="main">
+            <div class="left-column">
+                
+                <div class="text-post">
+                    <textarea class="text-for-post" placeholder="Здесь будет текст поста..."></textarea>
+                </div>
+            </div>
+            <div class="right-column">
+                
+                <form class="form">
+                    <div class="form-group">
+                        <input type="text" id="post-title" class="input-post-name" name="post-title" placeholder="Заголовок поста">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="source" class="input-post-name" name="source" placeholder="Источник (доменное имя сайта)">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="image-source" class="input-post-name" name="image-source" placeholder="Заголовок изображения (доменное имя сайта)">
+                    </div>
+                        <div class="cont-for-rules">
+                            <p class="title-rul">Правила публикации:</p>
+                            <ol>
+                                <li class="p-rule">Публикация не должна содержать нецензурную лексику.</li>
+                                <li class="p-rule">Все данные публикации должны содержать достоверные факты.</li>
+                                <li class="p-rule">Публикации не должны ничего пропагандировать.</li>
+                            </ol>
+                        </div>
+                    <button type="submit" class="publish-button">Опубликовать</button>
+                </form>
+
+            </div>
+    </article>
+    </main>
+    <footer id="foot-prof">
+        <div class="rest2"></div>
+        <center>
+            <p class="name foot">TechTrends</p>
+        </center>
+        <div class="rest1"></div>
+        <section class="fott">
+            <div class="menu">
+                <p class="menu_foot">
+                   Меню
+                </p>
+                    <a class="nav_item-foot" href="#">Новости</a>
+                    <a class="nav_item-foot" href="#">Главная</a>
+                    <a class="nav_item-foot" href="#">Вопросы в IT</a>
+            </div>
+            <div class="rest1"></div>
+            <div class="about">
+                <p class="menu_foot">
+                    О нас
+                </p>
+                <a class="nav_item-foot" href="#">Страница о нас</a>
+                <a class="nav_item-foot" href="#">Все документы</a>
+                <a class="nav_item-foot" href="#">FAQ</a>
+            </div>
+            <div class="rest1"></div>
+            <div class="social">
+                <p class="menu_foot">
+                    Мы в соц.сетях
+                </p>
+                <a class="nav_item-foot" href="#">YouTube</a>
+                <a class="nav_item-foot" href="#">Telegram</a>
+                <a class="nav_item-foot" href="#">Rutube</a>
+                <a class="nav_item-foot" href="#">VK сообщество</a>
+            </div>
+        </section>
+        <div class="rest3"></div>
+        <center>
+            <small class="copy-prof">Copyright &copy; 2024 TechTrends</small>
+          </center>
+    </footer>
+    
+</body>
+</html>
