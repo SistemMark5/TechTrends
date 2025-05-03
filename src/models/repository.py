@@ -2,7 +2,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.models.model import Post
-from src.shemas import CreatePost, PostRead, PostUpdate
+from src.models.shemas import CreatePost, PostRead, PostUpdate
 
 
 class TaskRepository:

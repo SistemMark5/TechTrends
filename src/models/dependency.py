@@ -3,7 +3,7 @@ from fastapi.params import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql.annotation import Annotated
 
-from src.db_helper import db_helper
+from src.models.db_helper import db_helper
 from src.models.repository import TaskRepository
 
 
