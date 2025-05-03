@@ -17,14 +17,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-.post-cont {
-    display: flex;
-    height: 600px;
-    width: 1700px;
-    background-color: #151515;
-    border-radius: 18px;
-    margin-bottom: 50px;
-}
+
 .conteiner-p {
     margin-top: 500px;
 }
@@ -210,16 +203,7 @@ body {
     width: 100%;
     height: auto;
 }
-.news-title {
-    font-size: 64px;
-    color: #CBCFD8;
-    font-family: "Comfortaa", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
+
 .conteiner-news {
     width: 800px;
     height: 449px;
@@ -274,28 +258,8 @@ body {
     margin-top: -150px;
     margin-left: 60px;
 }
-.autor {
-    font-size: 20px;
-    color: #CBCFD8;
-    font-family: "Comfortaa", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    position: absolute;
-    margin-top: -75px;
-    margin-left: 60px;
-}
-.date-publish {
-    font-size: 20px;
-    color: #CBCFD8;
-    font-family: "Comfortaa", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    position: absolute;
-    margin-top: -50px;
-    margin-left: 60px;  
-}
+
+
 .tap {
     font-size: 16px;
     color: #CBCFD8;

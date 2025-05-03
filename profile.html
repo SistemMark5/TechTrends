@@ -17,10 +17,10 @@
        </style>
         <nav>
             <a class="nav-item profile" href="#">Главная</a>
-            <a class="nav-item profile" href="#">Главная</a>
+            <a class="nav-item profile" href="#">Лента</a>
             <p class="name">TechTrends</p>
             <a class="nav-item profile" href="#">Главная</a>
-            <a class="nav-item profile" href="#">Главная</a>
+            <a class="nav-item profile" href="#">Мой профиль</a>
         </nav>
     </header>
 
@@ -53,7 +53,7 @@
                             Количество постов: 55
                         </p>
                     </div>
-                    <button class="post-btn">Опубликовать новый пост</button>
+                    <button class="post-btn"><a href="make-post.html">Опубликовать новый пост</a></button>
                 </div>
                 <div class="sub">
                     <div class="post sub">
@@ -71,7 +71,9 @@
                 </div>
                 <div class="cont2">
                     <div class="post sub ava">
-                        <button class="ava-btn">Загрузить новую фотографию пользователя</button>
+                        <span id="file-status"></span>
+                        <label for="new-profile-photo" class="ava-btn">Загрузить новое изображение профиля</label>
+                        <input type="file" id="new-profile-photo" accept="image/*" class="profile-input-photo">
                     </div>
                 </div>
             </div>
