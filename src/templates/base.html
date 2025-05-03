@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>{% block title %} {% endblock %}</title>
 </head>
-<body class="new-body">
-    <header class="profile-head">
+<body>
+<header class="profile-head">
         <style>
             * {
             margin: 0;
@@ -18,39 +18,15 @@
             <a class="nav-item profile" href="#">Главная</a>
             <a class="nav-item profile" href="#">Лента</a>
             <p class="name">TechTrends</p>
-            <a class="nav-item profile" href="#">Главная</a>
+            <a class="nav-item profile" href="#">Создать новый пост</a>
             <a class="nav-item profile" href="#">Мой профиль</a>
         </nav>
     </header>
-    <main class="index-main">
-        <center>
-            <p class="news-title">
-                Новости
-            </p>
-        </center>
-        <center>
-        <div class="post-cont">
+{% block content %}
 
-            <div class="conteiner-p">
-                <p class="title-news">Новый iPhone 16</p>
-                <p class="autor">
-                    Автор: Ivan Alekhin
-                </p>
-                <p class="date-publish">
-                    Дата публикации: 10 декабря 2024
-                </p>
-                <p class="tap">Нажмите на фото, чтобы прочитать более</p> 
-            </div>
+{% endblock %}
 
-            <div class="pnimg">
-                <img src="img/amanz-VP_FOpy5G68-unsplash.jpg" alt="">
-            </div>
-
-        </div>
-    </center>
-        
-    </main>
-    <footer>
+<footer>
         <div class="rest2"></div>
         <center>
             <p class="name foot">TechTrends</p>
