@@ -1,5 +1,6 @@
 from fastapi.templating import Jinja2Templates
 
-from config import settings
+from src.config import settings
 
-templates = Jinja2Templates(directory=settings.templates.path)
+templates = Jinja2Templates(directory=settings.templates.template_path)
+
