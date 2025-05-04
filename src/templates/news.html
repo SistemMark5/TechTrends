@@ -11,22 +11,22 @@
         </center>
         <center>
         <div class="post-cont">
+            {% for post in posts %}
+                <div class="conteiner-p">
+                    <p class="title-news">{{ post.title }}</p>
+                    <p class="autor">
+                        Автор: Ivan Alekhin
+                    </p>
+                    <p class="date-publish">
+                        Дата публикации: {{ post.date_post }}
+                    </p>
+                    <p class="tap">Нажмите на фото, чтобы прочитать более</p>
+                </div>
 
-            <div class="conteiner-p">
-                <p class="title-news">Новый iPhone 16</p>
-                <p class="autor">
-                    Автор: Ivan Alekhin
-                </p>
-                <p class="date-publish">
-                    Дата публикации: 10 декабря 2024
-                </p>
-                <p class="tap">Нажмите на фото, чтобы прочитать более</p> 
-            </div>
-
-            <div class="pnimg">
-                <img src="img/amanz-VP_FOpy5G68-unsplash.jpg" alt="">
-            </div>
-
+                <div class="pnimg">
+                    <img src="{{ url_for('static', path='{{ post.image_path }}') }}" alt="">
+                </div>
+            {% endfor %}
         </div>
     </center>
         

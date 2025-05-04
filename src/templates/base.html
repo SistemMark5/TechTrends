@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    {% block script %} {% endblock %}
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
@@ -14,13 +15,17 @@
             padding: 0;
             }
        </style>
+    <center>
         <nav>
-            <a class="nav-item profile" href="#">Главная</a>
-            <a class="nav-item profile" href="#">Лента</a>
-            <p class="name">TechTrends</p>
-            <a class="nav-item profile" href="#">Создать новый пост</a>
-            <a class="nav-item profile" href="#">Мой профиль</a>
+
+                <a class="nav-item profile" href="#">Главная</a>
+                <a class="nav-item profile" href="#">Лента</a>
+                <p class="name">TechTrends</p>
+                <a class="nav-item profile" href="#">Мой профиль</a>
+                <a class="nav-item profile" href="#">Новый пост</a>
+
         </nav>
+    </center>
     </header>
 {% block content %}
 
@@ -31,7 +36,7 @@
         <center>
             <p class="name foot">TechTrends</p>
         </center>
-        <div class="rest"></div>
+        <div class="re"></div>
         <section class="fott">
             <div class="menu">
                 <p class="menu_foot">
@@ -65,6 +70,7 @@
         <center>
             <small class="copy">Copyright &copy; 2024 TechTrends</small>
           </center>
+    <div class="re1"></div>
     </footer>
 </body>
 </html>
