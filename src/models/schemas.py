@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class CreatePost(BaseModel):
@@ -13,3 +13,8 @@ class PostRead(CreatePost):
 
 class PostUpdate(CreatePost):
     pass
+
+class AddPost(CreatePost):
+    id: int
+
+    # model_config = ConfigDict(from_attributes=True)
