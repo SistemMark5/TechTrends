@@ -2,7 +2,7 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.models.model import Post
-from src.models.shemas import CreatePost, PostRead, PostUpdate
+from src.models.schemas import CreatePost, PostUpdate, AddPost
 
 
 class TaskRepository:
@@ -15,14 +15,14 @@ class TaskRepository:
         await session.commit()
 
     @classmethod
-    async def get_post(cls, session: AsyncSession) -> Post:
+    async def get_posts(cls, session: AsyncSession) -> Post:
         stmt = select(Post)
         result = await session.execute(stmt)
         posts = result.scalars().all()
         return posts
 
     @classmethod
-    async def update_post(cls, session: AsyncSession, post_in: PostRead, post_update: PostUpdate) -> None:
+    async def update_post(cls, session: AsyncSession, post_in: AddPost, post_update: PostUpdate) -> None:
         for key, value in post_update.model_dump().items():
             setattr(post_in, key, value)
         await session.commit()
@@ -35,6 +35,6 @@ class TaskRepository:
         return post_by_title
 
     @classmethod
-    async def delete_post(cls, session: AsyncSession, post: PostRead) -> None:
+    async def delete_post(cls, session: AsyncSession, post: AddPost) -> None:
         await session.delete(post)
         await session.commit()
