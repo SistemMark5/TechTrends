@@ -3,11 +3,14 @@ from pathlib import Path
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).parent.parent
 
 class Templates(BaseModel):
-    path: str = BASE_DIR / "templates",
+    template_path: str = BASE_DIR / "src" / "templates"
+    static_path: str = BASE_DIR / "src" / "static"
+
+class UploadedFiles(BaseModel):
+    file_dir: str = BASE_DIR / "src" / "static" / "img"
 
 class DataBaseConfig(BaseModel):
     MODE: str
@@ -28,8 +31,9 @@ class DataBaseConfig(BaseModel):
 
 
 class Settings(BaseSettings):
+    templates: Templates = Templates()
+    files: UploadedFiles = UploadedFiles()
     db: DataBaseConfig
-    templates: Templates
 
     model_config = SettingsConfigDict(
         env_file=".env",
