@@ -12,3 +12,4 @@
 ### Стек
 FastAPI, SQLAlchemy, Pydantic, pydantic-settings.
 В качестве SQL базы данных я использовал самую популярную на данный момент PostgreSQL.
+Самый полный стек с версиями можно узнать в файле `requirements.txt`
