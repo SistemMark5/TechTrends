@@ -4,7 +4,7 @@ from pydantic import BaseModel, ConfigDict
 class CreatePost(BaseModel):
     title: str
     text: str
-    image_path: str
+    image_path: str | None = "img/default.jpg"
     title_image: str
     from_title: str
 
@@ -17,4 +17,4 @@ class PostUpdate(CreatePost):
 class AddPost(CreatePost):
     id: int
 
-    # model_config = ConfigDict(from_attributes=True)
+    model_config = ConfigDict(from_attributes=True)
