@@ -1,13 +1,11 @@
-from http.client import responses
-from typing import Annotated
+from typing import Optional
 
-from fastapi import APIRouter, Request, Form
+from fastapi import APIRouter, Request, Form, File, UploadFile, HTTPException
 from fastapi.params import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from starlette.responses import RedirectResponse
 
 from models.dependency import upload_files
-from models.schemas import CreatePost, AddPost
+from models.schemas import CreatePost
 from src.models.crud import TaskRepository
 from src.models.db_helper import db_helper
 from src.utils.templates import templates
@@ -26,7 +24,7 @@ async def news_page(
     )
 
 
-@router.get("/create-post", response_model=None)
+@router.get("/create-post")
 async def create_post_page(
     request: Request,
 ):
@@ -35,20 +33,29 @@ async def create_post_page(
 
 @router.post("/create-post", response_model=None)
 async def create_post(
-    request: Request,
-    title: str = Form(...),
-    text: str = Form(...),
-    image_path: str | None = Depends(upload_files),
-    title_image: str = Form(...),
-    from_title: str = Form(...),
-    session: AsyncSession = Depends(db_helper.session_dependency),
+        title: str = Form(...),
+        text: str = Form(...),
+        image: Optional[UploadFile] = File(None),  # Изменено с image_path
+        title_image: Optional[str] = Form(None),  # Сделано необязательным
+        from_title: Optional[str] = Form(None),  # Сделано необязательным
+        session: AsyncSession = Depends(db_helper.session_dependency),
 ):
+    # Обработка изображения
+    image_path = None
+    if image:
+        image_path = await upload_files(image)  # Предполагается, что upload_files обрабатывает UploadFile
+
     post_in = CreatePost(
         title=title,
         text=text,
-        image_path=image_path,
-        title_image=title_image,
-        from_title=from_title,
-    ).model_validate()
-    post = await TaskRepository.create_post(session=session, post=post_in)
-    return RedirectResponse(url="/create-post", status_code=303)
+        image_path=image_path,  # Может быть None
+        title_image=title_image,  # Может быть None
+        from_title=from_title,  # Может быть None
+    )
+
+    try:
+        post = await TaskRepository.create_post(session=session, post=post_in)
+        return post
+    except Exception as e:
+        await session.rollback()
+        raise HTTPException(status_code=400, detail=str(e))

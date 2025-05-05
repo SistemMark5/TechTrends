@@ -21,11 +21,11 @@ async def get_by_title(title: Annotated[str, Path], session: AsyncSession = Depe
     )
 
 
-async def upload_files(file: UploadFile = File()):
+async def upload_files(file: UploadFile):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     new_filename = f"{timestamp}_{file.filename}"
     file_path = os.path.join(settings.files.file_dir, new_filename)
-    async with open(file_path, "wb") as f:
+    with open(file_path, "wb") as f:
         f.write(await file.read())
 
     return str(file_path)

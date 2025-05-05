@@ -10,7 +10,7 @@ class Templates(BaseModel):
     static_path: str = BASE_DIR / "src" / "static"
 
 class UploadedFiles(BaseModel):
-    file_dir: str = BASE_DIR / "src" / "static" / "img"
+    file_dir: str = ".\src\static\img"
 
 class DataBaseConfig(BaseModel):
     MODE: str
