@@ -1,7 +1,8 @@
+
 .idea
 venv
 .venv
 .env
 .env.test
-TechTrends_Front
-TechTrends_Front/index.html
+
+TechTrends_Front/
