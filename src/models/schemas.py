@@ -3,10 +3,10 @@ from pydantic import BaseModel, ConfigDict
 
 class CreatePost(BaseModel):
     title: str
-    text: str
+    text: str | None
     image_path: str | None = "img/default.jpg"
-    title_image: str
-    from_title: str
+    title_image: str | None
+    from_title: str | None
 
 class PostRead(CreatePost):
     pass

@@ -34,16 +34,16 @@ async def create_post_page(
 @router.post("/create-post", response_model=None)
 async def create_post(
         title: str = Form(...),
-        text: str = Form(...),
+        text: str = Form(None),
         image: Optional[UploadFile] = File(None),  # Изменено с image_path
         title_image: Optional[str] = Form(None),  # Сделано необязательным
         from_title: Optional[str] = Form(None),  # Сделано необязательным
         session: AsyncSession = Depends(db_helper.session_dependency),
 ):
     # Обработка изображения
-    image_path = None
-    if image:
-        image_path = await upload_files(image)  # Предполагается, что upload_files обрабатывает UploadFile
+    # image_path = None
+    # if image:
+    image_path = await upload_files(image)  # Предполагается, что upload_files обрабатывает UploadFile
 
     post_in = CreatePost(
         title=title,
