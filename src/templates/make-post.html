@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block script %} <script src="{{ url_for('static', path='js\file_name.js') }}" ></script> {% endblock %}
+{% block script %} <script src="{{ url_for('static', path='js/scr.js') }}" ></script> {% endblock %}
 {% block title %} TechTrends • Создать новый пост {% endblock %}
 
 {% block content %}
@@ -21,7 +21,7 @@
             </div>
             <div class="right-column">
                 
-                <form class="form">
+                <form method="POST" class="form">
                     <div class="form-group">
                         <input type="text" id="post-title" class="input-post-name" name="title" placeholder="Заголовок поста">
                     </div>
